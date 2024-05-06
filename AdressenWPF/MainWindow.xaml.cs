@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Reflection;
+using System.Net;
 
 namespace Adressen;
 
@@ -37,14 +38,10 @@ public partial class MainWindow : Window
     }
     private void Load_Click(object sender, EventArgs e)
     {
-        pList.Items.Clear();
-        string p;
+        //pList.Items.Clear();
         persons.LoadFromFile("Adressen.txt");
-        foreach (var person in persons.people)
-        {
-            p = person.vorname + " " + person.nachname;
-            pList.Items.Add(p);
-        }
+        pList.ItemsSource = persons.people;
+        pList.Items.Refresh();
     }
 
     private void Load_DB(object sender, RoutedEventArgs e)
@@ -78,7 +75,7 @@ public partial class MainWindow : Window
         newp.vorname = vName.Text;
         newp.nachname = nName.Text;
         newp.strasse = street.Text;
-        newp.hausnr = Convert.ToInt32(hausnr.Text);
+        newp.hausnr = hausnr.Text;
         newp.plz = postal.Text;
         newp.ort = city.Text;
 
