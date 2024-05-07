@@ -13,6 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Reflection;
 using System.Net;
+using AdressenWPF;
 
 namespace Adressen;
 
@@ -47,6 +48,13 @@ public partial class MainWindow : Window
     private void Load_DB(object sender, RoutedEventArgs e)
     {
         persons.people = _sqlOps.GetPeople();
+
+        foreach (var p in persons.people)
+        {
+            p.mail = _sqlOps.GetMails(p.id);
+            p.nummer = _sqlOps.GetTelNr(p.id);
+        }
+
         pList.ItemsSource = null;
         pList.ItemsSource = persons.people;
         pList.Items.Refresh();
@@ -87,5 +95,43 @@ public partial class MainWindow : Window
         hausnr.Text = "";
         postal.Text = "";
         city.Text = "";
+    }
+
+    //private void pList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    //{
+    //    if (pList.SelectedItem != null)
+    //    {
+    //        Person p = (Person)pList.SelectedItem;
+    //        vName.Text = p.vorname;
+    //        nName.Text = p.nachname;
+    //        street.Text = p.strasse;
+    //        hausnr.Text = p.hausnr;
+    //        postal.Text = p.plz;
+    //        city.Text = p.ort;
+            
+    //    }
+    //}
+
+    private void Email_Button(object sender, RoutedEventArgs e)
+    {
+        if (pList.SelectedItem == null)
+        {
+            MessageBox.Show("Bitte Person wählen!");
+            return;
+        }
+
+            Email email = new Email((Person)pList.SelectedItem);
+            email.Show();
+        
+    }
+    private void Tel_Button(object sender, RoutedEventArgs e)
+    {
+        if (pList.SelectedItem == null)
+        {
+            MessageBox.Show("Bitte Person wählen!");
+            return;
+        }
+        Telefon telefon = new Telefon((Person)pList.SelectedItem);
+        telefon.Show();
     }
 }

@@ -64,11 +64,16 @@
 
         <Button Click="Save_Click" Grid.Row="3" Content="Save" Margin="108,37,220,131"/>
         <Button Click="Load_Click" Grid.Row="3" Content="Load" Margin="220,37,108,131"/>
-        <Button Click="Save_DB" Grid.Row="3" Grid.Column="1" Content="Upload" Margin="108,37,220,131"/>
-        <Button Click="Load_DB" Grid.Row="3" Grid.Column="1" Content="Download" Margin="220,37,108,131"/>
+
+        <Button Click="Tel_Button" Grid.Row="3" Grid.Column="1" Content="Telefon" Margin="228,10,100,158"/>
+        <Button Click="Email_Button" Grid.Row="3" Grid.Column="1" Content="Email" Margin="100,10,228,158"/>
+
+        <Button Click="Save_DB" Grid.Row="3" Grid.Column="1" Content="Upload" Margin="100,58,228,110"/>
+        <Button Click="Load_DB" Grid.Row="3" Grid.Column="1" Content="Download" Margin="228,58,100,110"/>
         <Button Click="AddPerson" Grid.Row="1" Content="Submit" Margin="302,214,26,14"/>
 
         <DataGrid Background="Beige" BorderThickness="2"  Grid.Column="1" Name="pList" Grid.Row="1" Margin="0,0,10,0"/>
+        
 
     </Grid>
 </Window>

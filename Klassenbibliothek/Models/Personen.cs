@@ -1,4 +1,6 @@
-﻿namespace Klassenbibliothek.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Klassenbibliothek.Models;
 
 public class Person
 {
@@ -9,4 +11,7 @@ public class Person
     public string hausnr { get; set; }
     public string plz { get; set; }
     public string ort { get; set; }
+
+    public List<Mail> mail { get; set; }
+    public List<Tel> nummer { get; set; }
 }
