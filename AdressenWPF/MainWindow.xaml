@@ -72,7 +72,8 @@
         <Button Click="Load_DB" Grid.Row="3" Grid.Column="1" Content="Download" Margin="228,58,100,110"/>
         <Button Click="AddPerson" Grid.Row="1" Content="Submit" Margin="302,214,26,14"/>
 
-        <DataGrid Background="Beige" BorderThickness="2"  Grid.Column="1" Name="pList" Grid.Row="1" Margin="0,0,10,0"/>
+        <DataGrid Background="Beige" RowBackground="LightYellow" AlternatingRowBackground="LightBlue" 
+                  BorderThickness="2"  Grid.Column="1" Grid.Row="1" Name="pList" Margin="0,0,10,0" CanUserAddRows="False"/>
         
 
     </Grid>

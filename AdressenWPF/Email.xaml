@@ -11,8 +11,9 @@
             <RowDefinition Height="400"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
-        <DataGrid Grid.Row="0" Background="Beige" BorderThickness="2" Name="eList" SelectionChanged="eList_SelectionChanged"/>
+
+        <DataGrid Background="Beige" RowBackground="LightYellow" AlternatingRowBackground="LightBlue"
+                  Grid.Row="0" BorderThickness="2" Name="eList" CanUserAddRows="False"/>
 
         <Label FontWeight="DemiBold" FontSize="15" Grid.Row="1" HorizontalAlignment="Center">
             <TextBlock TextDecorations="Underline"> Email-Adresse

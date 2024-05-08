@@ -42,14 +42,14 @@ namespace AdressenWPF
             }
         }
 
-        private void eList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (eList.SelectedItem != null)
-            {
-                Mail m = (Mail)eList.SelectedItem;
-                mailbox.Text = m.mail;
-            }
-        }
+        //private void eList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    if (eList.SelectedItem != null)
+        //    {
+        //        Mail m = (Mail)eList.SelectedItem;
+        //        mailbox.Text = m.mail;
+        //    }
+        //} SelectionChanged="eList_SelectionChanged" 
 
         private void addEmail(object sender, RoutedEventArgs e)
         {
